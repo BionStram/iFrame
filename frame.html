@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input {
+        width: 35;
+    }
+</style>
+<script src="svg.min.js"></script>
+
+<body>
+    <div id="drawing"></div>
+    <input id="homegoal" type=" text " value=0>
+    <input id="homepoints" type=" text " value=0>
+    <input id="hometotal" type=" text " value=0>
+    <script>
+        // example variable and function for cross-document demo
+        HGoal = 0;
+        HPoints = 0;
+        HTotal = 0;
+        //console.log(document);
+        function HG() {
+            HGoal = ++HGoal;
+            document.getElementById('homegoal').value = HGoal;
+            HT();
+        }
+
+        function HP() {
+            HPoints = ++HPoints;
+            document.getElementById('homepoints').value = HPoints;
+            HT();
+        }
+
+        function HT() {
+            HTotal = (HGoal * 6) + HPoints;
+            document.getElementById('hometotal').value = HTotal;
+        }
+
+        function HReset() {
+            HGoal = 0;
+            document.getElementById('homegoal').value = HGoal;
+            HPoints = 0;
+            document.getElementById('homepoints').value = HPoints;
+            HTotal = 0;
+            document.getElementById('hometotal').value = HTotal;
+        }
+    </script>
+</body>
+
+</html>

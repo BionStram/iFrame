@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="svg.min.js"></script>
+
+<body>
+    <div id="drawing"></div>
+    <script>
+        //load svg script
+        SVG.on(document, 'DOMContentLoaded', function() {
+            var draw = SVG('drawing').size(300, 300)
+            var rect = draw.rect(100, 100).attr({
+                fill: '#f00',
+                id: 'myrect'
+
+            })
+
+            rect.radius(20);
+            rect.id("myrect");
+
+            var title = draw.plain("00").move(45, 45).attr({
+                fill: '#fff',
+                family: 'Times',
+                weight: 'bold',
+                anchor: 'middle',
+                size: 300
+            }).id('mytext')
+
+            //text.text('Hello');
+            //text.id('mytext');
+        })
+
+        function test() {
+            document.getElementById('mytext').innerHTML = "22";
+            console.log("test");
+        }
+
+        function color() {
+            var r = document.getElementById('myrect');
+            r.setAttribute("fill", "#0f0");
+            console.log(r);
+        }
+
+
+        //console.log(text.text.getText)
+    </script>
+</body>
+
+</html>

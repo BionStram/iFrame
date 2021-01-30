@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="svg.min.js"></script>
+
+<body>
+    <iframe src="svg.html" frameborder="1" id="ifrm"></iframe>
+    <p>
+        <button width="30" id="button1">Goal</button>
+        <button width="30" id="button2">Points</button>
+    </p>
+    <p>
+        <button width="30" id="button3">Reset</button>
+        <button width="30" id="button4">Get Win in Console</button>
+    </p>
+    <script>
+        document.getElementById('ifrm').onload = function() {
+
+            document.getElementById('button1').onclick = function() {
+                var win = document.getElementById('ifrm').contentWindow;
+                //var counter = ++win.counter; / / increment
+                win.HG();
+                console.log(win.HGoal);
+            }
+            document.getElementById('button2').onclick = function() {
+                var win = document.getElementById('ifrm').contentWindow;
+                //var counter = ++win.counter; / / increment
+                win.HP();
+                console.log(win.HPoints);
+            }
+            document.getElementById('button3').onclick = function() {
+                var win = document.getElementById('ifrm').contentWindow;
+                //var counter = ++win.counter; / / increment
+                win.HReset();
+
+                //console.log(win.HTotal);
+            }
+            document.getElementById('button4').onclick = function() {
+                //var win = document.getElementById('ifrm')
+                //var counter = ++win.counter; / / increment
+                //win.HReset();
+                //var doc = win.contentDocument ? win.contentDocument : win.contentWindow.document;
+                //var t = doc.getElementById('mytext');
+                //var gt = win.getText();
+                //console.log(t.innerHTML);
+                var win = document.getElementById('ifrm').contentWindow;
+                //var counter = ++win.counter; / / increment
+                //win.HReset();
+
+                win.test();
+                win.color();
+                console.log(win);
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>
